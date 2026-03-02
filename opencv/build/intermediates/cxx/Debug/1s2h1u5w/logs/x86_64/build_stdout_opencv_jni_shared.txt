@@ -1,0 +1,2 @@
+ninja: Entering directory `C:\Users\user\OneDrive\Escritorio\parcial corte1 vision\opencv\.cxx\Debug\1s2h1u5w\x86_64'
+ninja: no work to do.
