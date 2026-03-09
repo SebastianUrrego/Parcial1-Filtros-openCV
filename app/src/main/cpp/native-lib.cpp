@@ -36,4 +36,25 @@ Java_com_bryan_1lunay_opencv_1parcial_MainActivity_processImageNative(JNIEnv *en
         sepia.copyTo(rgba);
     }
     // Si effect_mode == 0, se mantiene la imagen original.
+
+    else if (effect_mode == 3) {
+    // EJEMPLO 3: Segmentación de color verde
+    Mat hsv, mask, result;
+
+    // 1. Convertir de RGBA a HSV
+    cvtColor(rgba, hsv, COLOR_RGBA2BGR);
+    cvtColor(hsv, hsv, COLOR_BGR2HSV);
+
+    // 2. Definir rango de color verde en HSV
+    Scalar verde_bajo(35, 50, 50);   // Límite inferior del verde
+    Scalar verde_alto(85, 255, 255); // Límite superior del verde
+
+    // 3. Crear máscara: solo los píxeles verdes quedan en blanco
+    inRange(hsv, verde_bajo, verde_alto, mask);
+
+    // 4. Aplicar máscara: mostrar solo los píxeles verdes
+    result = Mat::zeros(rgba.size(), rgba.type());
+    rgba.copyTo(result, mask);
+    result.copyTo(rgba);
+    }
 }
