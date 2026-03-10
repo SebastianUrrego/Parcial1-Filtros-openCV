@@ -125,6 +125,6 @@ implementation("androidx.exifinterface:exifinterface:1.3.7")
 ---
 
 ## Autores
-**Bryan Lunay & Sebastian Urrego**
+**Bryan Ariza & Sebastian Urrego**
 Computer Vision - IELC 5818
 Universidad Sergio Arboleda
